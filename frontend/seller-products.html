@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products - Seller Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/seller.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">E-Commerce Marketplace</a>
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/profile.html">Profile</a>
+                <a href="/orders.html">Orders</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="seller-dashboard">
+        <h1>Manage Your Products</h1>
+        
+        <section class="add-product-section">
+            <h2>Add New Product</h2>
+            <form id="addProductForm" class="product-form">
+                <div class="form-group">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price ($)</label>
+                    <input type="number" id="price" name="price" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="number" id="stock" name="stock" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="categoryId">Category</label>
+                    <select id="categorySelect" name="categoryId" required>
+                        <option value="">Select a category</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">Image URL</label>
+                    <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+        </section>
+
+        <section class="edit-product-section" style="display: none;">
+            <h2>Edit Product</h2>
+            <form id="editProductForm" class="product-form">
+                <div class="form-group">
+                    <label for="edit-name">Product Name</label>
+                    <input type="text" id="edit-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-description">Description</label>
+                    <textarea id="edit-description" name="description" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-price">Price ($)</label>
+                    <input type="number" id="edit-price" name="price" step="0.01" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-stock">Stock</label>
+                    <input type="number" id="edit-stock" name="stock" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-categoryId">Category</label>
+                    <select id="edit-categorySelect" name="categoryId" required>
+                        <option value="">Select a category</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="edit-image">Image URL</label>
+                    <input type="url" id="edit-image" name="image" placeholder="https://example.com/image.jpg">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Update Product</button>
+                    <button type="button" class="btn btn-secondary" onclick="document.querySelector('.edit-product-section').style.display = 'none'">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="products-section">
+            <h2>Your Products</h2>
+            <div id="productsGrid" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-Commerce Marketplace. All rights reserved.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/seller-products.js"></script>
+</body>
+</html> 

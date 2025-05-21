@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - E-Commerce Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">E-Commerce</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="orders.html">Orders</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+            <button id="loginBtn" class="btn btn-outline">Login</button>
+            <button id="registerBtn" class="btn btn-primary">Register</button>
+            <button id="logoutBtn" class="btn btn-danger" style="display: none;">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">My Profile</h1>
+        
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <div class="profile-menu">
+                    <button class="profile-menu-item active" data-section="personal-info">
+                        <i class="fas fa-user"></i> Personal Information
+                    </button>
+                    <button class="profile-menu-item" data-section="addresses">
+                        <i class="fas fa-map-marker-alt"></i> Addresses
+                    </button>
+                    <button class="profile-menu-item" data-section="security">
+                        <i class="fas fa-lock"></i> Security
+                    </button>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <!-- Personal Information Section -->
+                <section id="personal-info" class="profile-section active">
+                    <h2>Personal Information</h2>
+                    <form id="personalInfoForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </section>
+
+                <!-- Addresses Section -->
+                <section id="addresses" class="profile-section">
+                    <h2>My Addresses</h2>
+                    <button class="btn btn-primary mb-3" id="addAddressBtn">
+                        <i class="fas fa-plus"></i> Add New Address
+                    </button>
+                    <div id="addressesList">
+                        <!-- Addresses will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Security Section -->
+                <section id="security" class="profile-section">
+                    <h2>Security Settings</h2>
+                    <form id="changePasswordForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" name="currentPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" name="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change Password</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Address Modal -->
+    <div id="addressModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="addressModalTitle">Add New Address</h2>
+            <form id="addressForm" class="profile-form">
+                <div class="form-group">
+                    <label for="addressLine1">Address Line 1</label>
+                    <input type="text" id="addressLine1" name="addressLine1" required>
+                </div>
+                <div class="form-group">
+                    <label for="addressLine2">Address Line 2</label>
+                    <input type="text" id="addressLine2" name="addressLine2">
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" required>
+                </div>
+                <div class="form-group">
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" id="postalCode" name="postalCode" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Address</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="authContent">
+                <!-- Auth content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted online marketplace for quality products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@ecommerce.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html> 

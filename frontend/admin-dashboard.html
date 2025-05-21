@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - E-commerce Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">E-commerce Marketplace</div>
+        <div class="nav-links">
+            <!-- Navigation will be loaded by navigation.js -->
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <p class="welcome-message">Welcome back, <span id="adminName">Admin</span></p>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>Total Users</h3>
+                <p id="totalUsers">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-box"></i>
+                <h3>Total Products</h3>
+                <p id="totalProducts">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Total Orders</h3>
+                <p id="totalOrders">Loading...</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Total Revenue</h3>
+                <p id="totalRevenue">Loading...</p>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Orders</h2>
+                    <a href="admin/orders.html" class="btn btn-primary">View All</a>
+                </div>
+                <div class="table-container">
+                    <table id="recentOrders">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Orders will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Users</h2>
+                    <a href="admin/users.html" class="btn btn-primary">View All</a>
+                </div>
+                <div class="table-container">
+                    <table id="recentUsers">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Joined</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Users will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Products</h2>
+                    <a href="admin/products.html" class="btn btn-primary">View All</a>
+                </div>
+                <div class="table-container">
+                    <table id="recentProducts">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Seller</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Products will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Payments</h2>
+                    <a href="admin/payments.html" class="btn btn-primary">View All</a>
+                </div>
+                <div class="table-container">
+                    <table id="recentPayments">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Payments will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html> 

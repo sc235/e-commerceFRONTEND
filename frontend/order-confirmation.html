@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - E-Commerce Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html">E-Commerce</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="orders.html">Orders</a>
+            <a href="cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cartCount">0</span>
+            </a>
+            <button id="loginBtn" class="btn btn-outline">Login</button>
+            <button id="registerBtn" class="btn btn-primary">Register</button>
+            <button id="logoutBtn" class="btn btn-danger" style="display: none;">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="confirmation-container">
+            <div class="confirmation-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h1>Order Confirmed!</h1>
+                <p>Thank you for your purchase. Your order has been received.</p>
+            </div>
+
+            <div class="confirmation-details">
+                <div class="confirmation-section">
+                    <h2>Order Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">Order Number:</span>
+                            <span id="orderNumber" class="value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Order Date:</span>
+                            <span id="orderDate" class="value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Order Status:</span>
+                            <span id="orderStatus" class="value"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Payment Status:</span>
+                            <span id="paymentStatus" class="value"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="confirmation-section">
+                    <h2>Shipping Information</h2>
+                    <div id="shippingInfo" class="shipping-info">
+                        <!-- Shipping information will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="confirmation-section">
+                    <h2>Order Items</h2>
+                    <div id="orderItems" class="order-items">
+                        <!-- Order items will be loaded here -->
+                    </div>
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal"></span>
+                        </div>
+                        <div class="total-row">
+                            <span>Shipping:</span>
+                            <span id="shipping"></span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax:</span>
+                            <span id="tax"></span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total:</span>
+                            <span id="total"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confirmation-actions">
+                <a href="orders.html" class="btn btn-outline">
+                    <i class="fas fa-list"></i> View All Orders
+                </a>
+                <a href="products.html" class="btn btn-primary">
+                    <i class="fas fa-shopping-bag"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted online marketplace for quality products.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@ecommerce.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-Commerce Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/order-confirmation.js"></script>
+</body>
+</html> 
